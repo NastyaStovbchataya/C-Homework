@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 int main() {
-	double valueSI, valueCGS = 0;
-	const double m_cm = 100, kg_g = 1000, w_ergs = 1e7, pa_ba = 10;
+	double valueSI, valueCGS = 0.0;
+	const double m_cm = 100.0, kg_g = 1000.0, w_ergs = 1e7, pa_ba = 10.0;
 	std::string unitSI, unitCGS;
 	std::cout << "SI unit (m, kg, s, W, Pa): ";
 	std::cin >> unitSI;
@@ -29,6 +30,6 @@ int main() {
 		unitCGS = "Ba";
 		valueCGS = valueSI * pa_ba;
 	}
-	std::cout << valueSI << " " << unitSI << " = " << valueCGS << " " << unitCGS;
+	std::cout << std::setprecision(1) << std::fixed << valueSI << " " << unitSI << " = " << std::setprecision(1) << std::fixed << valueCGS << " " << unitCGS;
 	return 0;
 }
